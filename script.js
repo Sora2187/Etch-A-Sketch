@@ -4,6 +4,7 @@ button.addEventListener('click', handleClick);
 
 let choice;
 function handleClick() {
+  container.innerHTML = '';
   choice = parseInt(prompt('Enter the size of grid: '));
   for (let j = 0; j < choice; j++) {
     const row = document.createElement('div');
