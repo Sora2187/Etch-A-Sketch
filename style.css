@@ -12,6 +12,50 @@
   width: 50px;
   border: 2px solid black;
 }
+.color-choice {
+  display: flex;
+  flex-direction: column;
+}
+.color-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
 .blk {
   background-color: black;
+}
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.brown {
+  background-color: brown;
 }
