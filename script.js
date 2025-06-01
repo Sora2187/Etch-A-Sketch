@@ -1,21 +1,36 @@
-const container = document.querySelector('.grid-container');
-const button = document.querySelector('#grid-size');
-button.addEventListener('click', handleClick);
+const container = document.querySelector(".grid-container");
+const button = document.querySelector("#grid-size");
+const resetButton = document.querySelector("#reset");
+
+button.addEventListener("click", handleClick);
+resetButton.addEventListener("click", resetClick);
 
 let choice;
 function handleClick() {
-  container.innerHTML = '';
-  choice = parseInt(prompt('Enter the size of grid: '));
+  container.innerHTML = "";
+  choice = parseInt(prompt("Enter the size of grid: "));
   for (let j = 0; j < choice; j++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
+    const row = document.createElement("div");
+    row.classList.add("row");
 
-    for (i = 0; i < choice; i++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
+    for (let i = 0; i < choice; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
       row.appendChild(cell);
+      cell.addEventListener("mouseenter", toggleColor);
+
+      function toggleColor() {
+        cell.classList.add("blk");
+      }
     }
 
     container.appendChild(row);
   }
+}
+
+function resetClick() {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.classList.remove("blk");
+  });
 }
